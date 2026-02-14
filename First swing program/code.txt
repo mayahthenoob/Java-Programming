@@ -1,0 +1,39 @@
+. import javax.swing.*; 
+2. public class JavaSwingClass { 
+3.  public static void main(String[] args) { 
+4.   //first create new JFrame instance 
+5.   JFrame f = new JFrame(); 
+6.   //JButton 
+7.   JButton b = new JButton("Click Me"); 
+8.   //x axis, y axis, width, height 
+9.   b.setBounds(130,100,100,100); 
+10.   //add the button 
+11.   f.add(b); 
+12.   //set size: 250 width, 50 height 
+13.   f.setSize(250,50); 
+14.   //no layout managers for now and make it visible 
+15.   f.setLayout(null); 
+16.   f.setVisible(true); 
+17.    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+18.  } 
+19. } 
+Using Inheritance & Swing Components 
+1. import javax.swing.*; 
+2. public class JavaSwingClass extends JFrame { 
+3.  //new Frame 
+4.  JFrame f; 
+5.  //constructor for this class 
+6.  JavaSwingClass() { 
+7.   JButton b = new JButton("Click ME!"); 
+8.   b.setBounds(130, 100, 100, 50); 
+9.   //add button 
+10.   add(b); 
+11.   setSize(300, 400); 
+12.   setLayout(null); 
+13.   setVisible(true); 
+14.    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+15.  } 
+16.  public static void main(String[] args) { 
+17.   new JavaSwingClass(); 
+18.  } 
+19. }
