@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class MyLabelDemo {
+
+    MyLabelDemo() {
+        // Create the frame and set basic properties
+        JFrame jfrm = new JFrame("Screenshot 518 Implementation");
+        jfrm.setLayout(new FlowLayout());
+        jfrm.setSize(350, 450);
+        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Load the image icon (from Screenshot 505/506 logic)
+        ImageIcon icon = new ImageIcon("cat.png");
+
+        // Create the label with text and image
+        JLabel label = new JLabel("I am a Cat", icon, JLabel.CENTER);
+
+        // --- Screenshot 518 Specific Logic ---
+        // These settings move the text relative to the image icon
+        label.setHorizontalTextPosition(JLabel.CENTER); // Center text horizontally over image
+        label.setVerticalTextPosition(JLabel.BOTTOM);   // Place text below the image
+
+        // Add a gap between the bottom of the image and the text
+        label.setIconTextGap(15);
+
+        // Add to frame and show
+        jfrm.add(label);
+        jfrm.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        // Thread safety via the Event Dispatch Thread (Screenshot 508)
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new MyLabelDemo();
+            }
+        });
+    }
+}

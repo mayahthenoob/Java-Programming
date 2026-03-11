@@ -1,0 +1,25 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class MyLabelDemo extends JPanel {
+    public MyLabelDemo() {
+
+    }
+
+      public static void createAndShowGUI() {
+          JFrame frame = new JFrame("Label Demo");
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          frame.add(new MyLabelDemo());
+          frame.setSize(300, 200);
+          frame.setVisible(true);
+      }
+      public static void main(String[] args) {
+          SwingUtilities.invokeLater(new Runnable() {
+              @Override
+              public void run() {
+                  UIManager.put("swing.boldMetal", Boolean.FALSE);
+                  createAndShowGUI();
+              }
+          });
+      }
+}
